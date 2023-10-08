@@ -143,8 +143,8 @@ def bi_cubic_interpolation(input_img, output_h, output_w):
             v = temp_y - y
 
             tmp = 0
-            for ii in range(-1, 2):
-                for jj in range(-1, 2):
+            for ii in range(-1, 3):
+                for jj in range(-1, 3):
                     if x + ii < 0 or y + jj < 0 or x + ii >= input_h or y + jj >= input_w:
                         continue
                     tmp += input_img[x + ii, y + jj] * bi_cubic_weight(ii - u) * bi_cubic_weight(jj - v)
@@ -176,8 +176,8 @@ def bi_cubic_interpolation_rgb(input_img, output_h, output_w):
                 v = temp_y - y
 
                 tmp = 0
-                for ii in range(-1, 2):
-                    for jj in range(-1, 2):
+                for ii in range(-1, 3):
+                    for jj in range(-1, 3):
                         if x + ii < 0 or y + jj < 0 or x + ii >= input_h or y + jj >= input_w:
                             continue
                         tmp += input_img[x + ii, y + jj, k] * bi_cubic_weight(ii - u) * bi_cubic_weight(jj - v)
@@ -208,5 +208,5 @@ if __name__ == '__main__':
     img_origin_bi_linear_out = bi_linear_interpolation_rgb(img_origin, 1200, 1600)
     img_origin_bi_cubic_out = bi_cubic_interpolation_rgb(img_origin, 1200, 1600)
     # 保存图片
-    cv2.imwrite("img_origin_bi_linear.png", img_origin_bi_linear_out)
-    cv2.imwrite("img_origin_bi_cubic.png", img_origin_bi_cubic_out)
+    cv2.imwrite("origin_bi_linear.png", img_origin_bi_linear_out)
+    cv2.imwrite("origin_bi_cubic.png", img_origin_bi_cubic_out)
