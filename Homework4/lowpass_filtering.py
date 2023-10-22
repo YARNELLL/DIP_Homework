@@ -51,23 +51,28 @@ if __name__ == "__main__":
     img_Sample_ideal_10 = ideal_lowpass_filtering(img_Sample, 10)
     img_Sample_ideal_10 = np.fft.ifftshift(img_Sample_ideal_10)
     img_Sample_ideal_10 = np.fft.ifft2(img_Sample_ideal_10)
-    img_Sample_ideal_10 = np.uint8(np.abs(img_Sample_ideal_10))
+    img_Sample_ideal_10 = np.abs(img_Sample_ideal_10)
+
     img_Sample_ideal_20 = ideal_lowpass_filtering(img_Sample, 20)
     img_Sample_ideal_20 = np.fft.ifftshift(img_Sample_ideal_20)
     img_Sample_ideal_20 = np.fft.ifft2(img_Sample_ideal_20)
-    img_Sample_ideal_20 = np.uint8(np.abs(img_Sample_ideal_20))
+    img_Sample_ideal_20 = np.abs(img_Sample_ideal_20)
+
     img_Sample_ideal_40 = ideal_lowpass_filtering(img_Sample, 40)
     img_Sample_ideal_40 = np.fft.ifftshift(img_Sample_ideal_40)
     img_Sample_ideal_40 = np.fft.ifft2(img_Sample_ideal_40)
-    img_Sample_ideal_40 = np.uint8(np.abs(img_Sample_ideal_40))
+    img_Sample_ideal_40 = np.abs(img_Sample_ideal_40)
+
     img_Sample_gaussian_10 = gaussian_lowpass_filtering(img_Sample, 10)
     img_Sample_gaussian_10 = np.fft.ifftshift(img_Sample_gaussian_10)
     img_Sample_gaussian_10 = np.fft.ifft2(img_Sample_gaussian_10)
     img_Sample_gaussian_10 = np.uint8(np.abs(img_Sample_gaussian_10))
+
     img_Sample_gaussian_20 = gaussian_lowpass_filtering(img_Sample, 20)
     img_Sample_gaussian_20 = np.fft.ifftshift(img_Sample_gaussian_20)
     img_Sample_gaussian_20 = np.fft.ifft2(img_Sample_gaussian_20)
     img_Sample_gaussian_20 = np.uint8(np.abs(img_Sample_gaussian_20))
+
     img_Sample_gaussian_40 = gaussian_lowpass_filtering(img_Sample, 40)
     img_Sample_gaussian_40 = np.fft.ifftshift(img_Sample_gaussian_40)
     img_Sample_gaussian_40 = np.fft.ifft2(img_Sample_gaussian_40)
