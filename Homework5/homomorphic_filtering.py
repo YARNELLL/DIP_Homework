@@ -39,9 +39,9 @@ def homomorphic_filtering(input_img, d0=2, rl=1.0, rh=2.0, c=1):
     output_img = (output_img - output_img.min()) / (output_img.max() - output_img.min())
     output_img *= 255
 
-    output_img = np.uint8(np.clip(output_img, 0 ,255))
+    output_img = np.uint8(np.clip(output_img, 0, 255))
 
-    return gray_img ,output_img
+    return gray_img, output_img
 
 
 if __name__ == "__main__":
